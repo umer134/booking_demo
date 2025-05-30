@@ -39,7 +39,7 @@ export default function Admin () {
             </div>
         }
         <div className="header">
-            <div><strong>{user?.user_metadata?.name || "user.name"} {authError && <div>{authError.message}</div>}</strong></div>
+            <div><strong>{user?.user_metadata?.name || "user.name"} {authError && authError?.message !== 'Unknown error' && <div>{authError.message}</div>}</strong></div>
             <button onClick={() => dispatch(logout())} className="logout">
                 {authLoading ? <div className="logautSpinner"/> : 'Выйти'}
             </button>
