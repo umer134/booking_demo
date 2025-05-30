@@ -1,0 +1,209 @@
+.entities-page {
+    padding: 16px;
+    max-height: 90vh;
+    /* overflow-y: auto; */
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logout-button {
+    padding: 8px 16px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #d62828;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+}
+
+/* .entities-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    max-height: 500px;
+    overflow-y: auto;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+
+.entity-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    padding: 16px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    height: 140px;
+}
+
+.entity-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #0070f3;
+}
+
+.entity-content {
+    flex-grow: 1;
+}
+
+.entity-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.entity-address,
+.entity-capacity {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.entity-pdf {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    pointer-events: none; 
+}
+*/
+
+.entity-pdf a {
+    color: #e1e2e4;
+    background-color: red;
+    text-decoration: none;
+    width: 60%;
+}
+
+.entity-card:hover .entity-pdf {
+    opacity: 1;
+}
+
+.pdf-icon {
+    width: 16px;
+    height: 16px;
+}
+ 
+.entities-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  max-height: 500px;
+  overflow-y: auto;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+}
+
+.entity-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  border-bottom-left-radius: 0;
+  padding: 16px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* контент снизу */
+  text-decoration: none;
+  color: white; /* белый текст */
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.entity-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.4);
+  border-color: #0070f3;
+}
+
+.entity-card .overlay {
+  position: absolute;
+  inset: 0;
+  /* background: rgba(0, 0, 0, 0.5);  */
+  border-radius: 12px;
+  pointer-events: none; /* чтобы клик проходил сквозь оверлей */
+  z-index: 0;
+}
+
+.entity-content {
+  position: relative;
+  z-index: 1; /* над оверлеем */
+  padding: 0 8px 8px 8px;
+  background: rgba(0, 0, 0, 0.4); /* дополнительный фон для текста */
+  border-radius: 0 0 12px 12px; /* скругление снизу */
+}
+
+.entity-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.entity-address,
+.entity-capacity {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    grid-column: 1 / -1;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #0070f3;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.logautSpinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #0070f3;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

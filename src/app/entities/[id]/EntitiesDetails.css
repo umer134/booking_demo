@@ -1,0 +1,44 @@
+.entity-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.entity-image-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.entity-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.entity-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+}
+
+.download-pdf-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #0070f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  width: fit-content;
+  transition: background 0.3s;
+}
+
+.download-pdf-button:hover {
+  background-color: #005bb5;
+}
