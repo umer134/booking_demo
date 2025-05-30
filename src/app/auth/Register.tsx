@@ -40,6 +40,7 @@ export default function Register () {
                         { loading ? <button disabled>loading...</button> : <button type="submit" >signUp</button> }
                     </div>
                 </form>
+                {error && <div>{error.message}</div>}
             </div>
         </div>
     );

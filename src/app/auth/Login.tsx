@@ -40,6 +40,7 @@ export default function Login ( ) {
                         <button type="submit">signIn</button>
                         }
                     </div>
+                    {error && <div>{error.message}</div>}
                 </form>
             </div>
         </div>

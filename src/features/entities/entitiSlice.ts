@@ -1,7 +1,7 @@
 import { supabase } from "@/lib/supaBaseClient";
 import { IEntitiState, IEntity } from "@/types/entitiModel";
 import { IError } from "@/types/errorModel";
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { handleRejectedError } from "@/utils/handleRejectedError";
 import { jsPDF } from "jspdf";
 
@@ -43,7 +43,7 @@ export const createEntity = createAsyncThunk<
 
       // 2. Загрузка фото в Supabase Storage
       if (image) {
-        const { data: imageUploaded, error: imageError } = await supabase.storage
+        const { error: imageError } = await supabase.storage
           .from("entity-images")
           .upload(`${entityId}.${image.name.split('.').pop()}`, image, {
             contentType: image.type,

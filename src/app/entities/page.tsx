@@ -1,6 +1,6 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-import { logout, refresh } from "@/features/auth/authSlice";
+import { logout } from "@/features/auth/authSlice";
 import { AppDispatch, RootState } from "@/store/store";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
