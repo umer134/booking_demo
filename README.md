@@ -18,19 +18,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### .env 
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### dependencies
 
-## Deploy on Vercel
+"@hookform/resolvers": "^5.0.1",
+"@react-pdf/renderer": "^4.3.0",
+"@reduxjs/toolkit": "^2.8.2",
+"@supabase/auth-helpers-nextjs": "^0.10.0",
+"@supabase/supabase-js": "^2.49.8",
+"jspdf": "^3.0.1",
+"next": "15.3.2",
+"react": "^19.0.0",
+"react-dom": "^19.0.0",
+"react-hook-form": "^7.56.4",
+"react-redux": "^9.2.0",
+"yup": "^1.6.1"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
