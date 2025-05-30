@@ -1,11 +1,12 @@
 import { useState } from "react";
 import type { AppDispatch, RootState } from "@/store/store";
-import { signUp } from "@/features/auth/authSlice";
+import { signUp, cleanError } from "@/features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import "./Auth.css";
 
 export default function Register () {
     const dispatch = useDispatch<AppDispatch>();
-    const { error, loading } = useSelector((state: RootState) => state.auth);
+    const { loading, error } = useSelector((state: RootState) => state.auth);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,6 +30,7 @@ export default function Register () {
     return (
         <div className="register-form">
             <div className="container">
+                {error && <div style={{marginBottom:'10px'}}>⚠️ {error?.message} <button onClick={() => dispatch(cleanError())}>clean</button></div>}
                 <form action={handleSignUp}>
                     <div className="register-inputs">
                         <input type="text" placeholder="type username" value={name} onChange={(e) => setName(e.target.value)} />
@@ -40,7 +42,6 @@ export default function Register () {
                         { loading ? <button disabled>loading...</button> : <button type="submit" >signUp</button> }
                     </div>
                 </form>
-                {error && <div>{error.message}</div>}
             </div>
         </div>
     );

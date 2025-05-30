@@ -140,6 +140,9 @@ const authSlice = createSlice({
       state.loading = false;
       state.user = null;
       state.error = null;
+    },
+    cleanError: (state) => {
+      state.error = null;
     }
   },
   extraReducers: (builder) => {
@@ -210,6 +213,6 @@ const authSlice = createSlice({
   }
 });
 
-export const { logoutUser } = authSlice.actions;
+export const { logoutUser, cleanError } = authSlice.actions;
 export default authSlice.reducer;
 

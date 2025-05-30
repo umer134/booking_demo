@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState, AppDispatch } from "@/store/store";
-import { signIn } from "@/features/auth/authSlice";
+import { signIn, cleanError } from "@/features/auth/authSlice";
 
 export default function Login ( ) {
     const dispatch = useDispatch<AppDispatch>();
@@ -28,6 +28,7 @@ export default function Login ( ) {
     return (
         <div className="login-form">
             <div className="container">
+                {error && <div style={{marginBottom:'10px'}}>⚠️ {error?.message} <button onClick={() => dispatch(cleanError())}>clean</button></div>}
                 <form action={handleSignIn}>
                     <div className="login-inputs">
                     <input type="email" placeholder="type email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -40,7 +41,6 @@ export default function Login ( ) {
                         <button type="submit">signIn</button>
                         }
                     </div>
-                    {error && <div>{error.message}</div>}
                 </form>
             </div>
         </div>
